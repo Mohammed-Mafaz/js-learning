@@ -13,8 +13,8 @@
 
 const id=Symbol("123")
 const anotherId=Symbol("123")
-console.log([id,anotherId]);
-console.log(id==anotherId); // false
+// console.log([id,anotherId]);
+// console.log(id==anotherId); // false
 
 // const bigNumber=1234567890233456n;
 
@@ -33,6 +33,28 @@ const myFunction=function () {
     console.log("Hello World");
 }
 
-console.log(typeof grocery) // object
-console.log(typeof myFunction) // object function
-console.log(typeof myObj);//object
+// console.log(typeof grocery) // object
+// console.log(typeof myFunction) // object function
+// console.log(typeof myObj);//object
+
+// ********************************
+
+// Stack (Primitive) , Heap (Non-Primivtive) 
+
+// let myName="qwerty"
+// let anotherName=myName;
+// anotherName="poiuyt"
+
+// console.log(myName);
+// console.log(anotherName);
+
+let userOne={
+    email:"user@example.com",
+    upi:"user@ybl"
+}
+let userTwo=userOne;
+
+userTwo.email="usertwo@ex.com" // makes userOne.email same as userTwo.email (call by reference)
+
+console.log(userOne);
+console.log(userTwo);
