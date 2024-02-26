@@ -9,6 +9,11 @@ color: #fff;">
     
 </body>
 <script>
+    // const elem = document.createElement()
+    // way , 1 : elem.attributes 2 : const addText = document.createTextNode("text string") --> elem.appendChild(addText) --> doc.body.appendChild(elem)
+    // setting attribute --> elem.setAttribute("attr name","attr value")
+
+    
     // creating element
     const div=document.createElement('div')
     console.log(div); // <div></div> is created
@@ -27,6 +32,6 @@ color: #fff;">
     div.appendChild(addText) // now the string is append to div element but is not showing on the screen
 
     document.body.appendChild(div); // div's properties are visible on the screen
-    
+
 </script>
 </html>
