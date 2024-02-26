@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>parent & child</title>
+</head>
+<body style="background-color: #212121;
+color: #fff;"> 
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent=document.querySelector(".parent")
+    // console.log(parent) // gives the element
+    // console.log(parent.children) // gives HTMLCollection
+    // console.log(parent.children[1]) // gives the 1st div 
+    // console.log(parent.children[1].innerHTML) // Tuesday
+
+    // iterating on the parent.children element ; since parent is an element and parent.children gives us collection , which can be iterated
+
+    for(let i=0;i<parent.children.length;i++){
+        // console.log(parent.children[i].innerHTML)
+    } // gives order-wise innerText Monday Tuesday Wednesday Thursday
+
+    parent.children[1].style.color="orange" // Tuesday (in Orange)
+
+    // selecting first and last child of the parent
+    // console.log(parent.firstElementChild);
+    // console.log(parent.lastElementChild);
+
+    // selecting parent from child
+    const dayOne=document.querySelector(".day")
+    // console.log(dayOne) // gets the first element div-Monday-/div
+    // console.log(dayOne.parentElement) // gives parent element
+
+    // selecting siblings
+    // console.log(dayOne.nextElementSibling) // div_Tuesday_/div
+
+    //
+    console.log("Nodes : ",parent.childNodes) // gives a NodeList(9) ; it includes both text(i.e; enters(space,lines (one is counted))
+    
+    </script>
+</html>
