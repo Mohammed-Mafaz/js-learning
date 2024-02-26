@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Creating elements</title>
+</head>
+<body style="background-color: #212121;
+color: #fff;">
+    
+</body>
+<script>
+    // creating element
+    const div=document.createElement('div')
+    console.log(div); // <div></div> is created
+    div.className="main"
+    // div.id="myid" or
+    div.id=Math.round(Math.random()*10+1)
+    //setting Attribute to an element
+    div.setAttribute("title","generated title")
+    div.style.backgroundColor="green"
+    div.style.padding="12px"
+    // Way 1 : div.something makes two way trip ; it overrides the existing value
+    // div.innerText="Learning DOM"
+    // Way 2 : creating a Text Node then appending it to the element
+    // works in two step 
+    const addText=document.createTextNode("Learning DOM")
+    div.appendChild(addText) // now the string is append to div element but is not showing on the screen
+
+    document.body.appendChild(div); // div's properties are visible on the screen
+    
+</script>
+</html>
