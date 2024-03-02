@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="profile" src="img/profile-800x800.png" alt="photoshop"></li>
+            <li><img width="200px" id="scenic" src="img/scenic-2200x1331.png" alt=""></li>
+            <li><img width="200px" id="map" src="img/map-2176x1451.png" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    // document.getElementById('map').onclick=function(){
+    //     alert("Map clicked")
+    // }
+
+    // previously used : attachEvent()
+    // jQuery - on
+
+    //type, timestamp, defaultPrevented, preventDefault
+    //target , toElement, srcElement, currentTarget
+    //clientX, clientY, screenX,screenY
+    //altkey, ctrlkey, shiftkey ,keyCode
+
+    // addEventListener("event",function(e){},false/true)  // default is false => bubbling / true => capturing
+
+    // document.getElementById('images').addEventListener('click',function(){
+    //     console.log('clicked inside the ul')
+    // },false);
+
+    // document.getElementById('map').addEventListener('click',function(e){
+    //     console.log("map clicked");
+    //     e.stopPropagation() 
+    //     // doesn't allow the functions/operations operating on it.
+    // },false);
+
+    // CASE TO NOTE
+    document.getElementById('google').addEventListener('click',function(e){
+        e.preventDefault();  
+        e.stopPropagation(); // prevent bubbling
+    },false)
+
+
+    // To remove li from ul
+    document.querySelector("#images").addEventListener('click',function(e){
+        console.log(e.target.tagName);
+        if(e.target.tagName === 'IMG'){ // preventing from getting the whole ul removed
+            // console.log(e.target.id);
+            let removeIt = e.target.parentNode;
+            removeIt.remove();
+        }
+    },false)
+
+    // removeIt.parentNode.removeChild(removeIt)
+
+
+    // Bubbling : traverse inner ---> outer        (false)
+    // Capturing : traverse outer --> inner elem   (true)
+
+    // Use either of them based on your use case
+</script>
+</html>
